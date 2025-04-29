@@ -22,6 +22,7 @@
     </button>
 
     <button
+      disabled={pancakes.length == 0}
       onclick={() => {
         pancakes.pop();
       }}

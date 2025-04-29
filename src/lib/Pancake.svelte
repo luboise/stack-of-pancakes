@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { draw, fly, blur } from "svelte/transition";
   import type { PancakeData } from "./Types";
 
   // const MAX_PANCAKE_WIDTH = 500;
@@ -6,7 +7,13 @@
   const { size, description, ...other }: PancakeData = $props();
 </script>
 
-<div class="pancake" style:transform={`scaleX(${size * 100}%)`} {...other}>
+<div
+  class="pancake"
+  style:transform={`scaleX(${size * 100}%)`}
+  {...other}
+  in:fly={{ y: -800, duration: 500, opacity: 0 }}
+  out:blur={{ duration: 250 }}
+>
   <div class="pancake-top" style:background="#ffd38b">
     <div class="pancake-top" style:background="#00ff00"></div>
   </div>
