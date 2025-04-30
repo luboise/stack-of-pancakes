@@ -21,5 +21,8 @@
 	{
       "path": "./packages/webapp"
     },
+	{
+      "path": "./packages/server-lambda"
+    },
   ]
 }
